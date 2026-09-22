@@ -1,0 +1,566 @@
+Sure. Here is a clean **Array Questions + Simplified Python Solutions** set, with no emojis.
+
+## 1. Find the Largest Element
+
+**Question:**
+Given an array, find the largest element.
+
+**Example:**
+
+```text
+Input:  [10, 25, 7, 40, 18]
+Output: 40
+```
+
+**Solution:**
+
+```python
+arr = [10, 25, 7, 40, 18]
+
+largest = arr[0]
+
+for i in arr:
+    if i > largest:
+        largest = i
+
+print(largest)
+```
+
+---
+
+## 2. Find the Smallest Element
+
+**Question:**
+Find the smallest element in an array.
+
+**Example:**
+
+```text
+Input:  [10, 25, 7, 40, 18]
+Output: 7
+```
+
+**Solution:**
+
+```python
+arr = [10, 25, 7, 40, 18]
+
+smallest = arr[0]
+
+for i in arr:
+    if i < smallest:
+        smallest = i
+
+print(smallest)
+```
+
+---
+
+## 3. Find the Sum of All Elements
+
+**Question:**
+Calculate the sum of all elements in an array.
+
+**Example:**
+
+```text
+Input:  [2, 4, 6, 8]
+Output: 20
+```
+
+**Solution:**
+
+```python
+arr = [2, 4, 6, 8]
+
+total = 0
+
+for i in arr:
+    total += i
+
+print(total)
+```
+
+---
+
+## 4. Count Even and Odd Numbers
+
+**Question:**
+Count how many even and odd numbers are present in an array.
+
+**Example:**
+
+```text
+Input:  [1, 2, 3, 4, 6, 7]
+
+Output:
+Even = 3
+Odd = 3
+```
+
+**Solution:**
+
+```python
+arr = [1, 2, 3, 4, 6, 7]
+
+even = 0
+odd = 0
+
+for i in arr:
+    if i % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+print("Even =", even)
+print("Odd =", odd)
+```
+
+---
+
+## 5. Reverse an Array
+
+**Question:**
+Reverse the elements of an array.
+
+**Example:**
+
+```text
+Input:  [1, 2, 3, 4, 5]
+Output: [5, 4, 3, 2, 1]
+```
+
+**Solution:**
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+arr.reverse()
+
+print(arr)
+```
+
+---
+
+## 6. Find the Second Largest Element
+
+**Question:**
+Find the second largest element in an array.
+
+**Example:**
+
+```text
+Input:  [10, 5, 20, 8, 15]
+Output: 15
+```
+
+**Solution:**
+
+```python
+arr = [10, 5, 20, 8, 15]
+
+arr.sort()
+
+print(arr[-2])
+```
+
+---
+
+## 7. Check if an Array is Sorted
+
+**Question:**
+Check whether an array is sorted in ascending order.
+
+**Example:**
+
+```text
+Input:  [1, 2, 3, 4, 5]
+Output: Sorted
+```
+
+**Solution:**
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+sorted_array = True
+
+for i in range(len(arr) - 1):
+    if arr[i] > arr[i + 1]:
+        sorted_array = False
+        break
+
+if sorted_array:
+    print("Sorted")
+else:
+    print("Not Sorted")
+```
+
+---
+
+## 8. Count Occurrence of an Element
+
+**Question:**
+Count how many times a given number occurs in an array.
+
+**Example:**
+
+```text
+Input:  [1, 2, 2, 3, 2, 4]
+Number: 2
+
+Output: 3
+```
+
+**Solution:**
+
+```python
+arr = [1, 2, 2, 3, 2, 4]
+
+count = 0
+
+for i in arr:
+    if i == 2:
+        count += 1
+
+print(count)
+```
+
+---
+
+## 9. Find the Missing Number
+
+**Question:**
+An array contains numbers from `1` to `n`, but one number is missing. Find it.
+
+**Example:**
+
+```text
+Input:  [1, 2, 4, 5]
+Output: 3
+```
+
+**Solution:**
+
+```python
+arr = [1, 2, 4, 5]
+
+n = 5
+
+total = n * (n + 1) // 2
+
+for i in arr:
+    total -= i
+
+print(total)
+```
+
+---
+
+## 10. Move All Zeroes to the End
+
+**Question:**
+Move all zeroes to the end while maintaining the order of other elements.
+
+**Example:**
+
+```text
+Input:  [0, 1, 0, 3, 12]
+Output: [1, 3, 12, 0, 0]
+```
+
+**Solution:**
+
+```python
+arr = [0, 1, 0, 3, 12]
+
+result = []
+
+for i in arr:
+    if i != 0:
+        result.append(i)
+
+while len(result) < len(arr):
+    result.append(0)
+
+print(result)
+```
+
+---
+
+## 11. Remove Duplicates
+
+**Question:**
+Remove duplicate elements from an array.
+
+**Example:**
+
+```text
+Input:  [1, 2, 2, 3, 3, 4]
+Output: [1, 2, 3, 4]
+```
+
+**Solution:**
+
+```python
+arr = [1, 2, 2, 3, 3, 4]
+
+result = []
+
+for i in arr:
+    if i not in result:
+        result.append(i)
+
+print(result)
+```
+
+---
+
+## 12. Find the Maximum Subarray Sum
+
+**Question:**
+Find the maximum possible sum of a continuous subarray.
+
+**Example:**
+
+```text
+Input:  [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+Output: 6
+```
+
+The subarray is:
+
+```text
+[4, -1, 2, 1]
+```
+
+**Solution:**
+
+```python
+arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+current = arr[0]
+maximum = arr[0]
+
+for i in range(1, len(arr)):
+    current = max(arr[i], current + arr[i])
+    maximum = max(maximum, current)
+
+print(maximum)
+```
+
+---
+
+## 13. Two Sum
+
+**Question:**
+Find two elements whose sum equals the target.
+
+**Example:**
+
+```text
+Array:  [2, 7, 11, 15]
+Target: 9
+
+Output: 2, 7
+```
+
+**Simple Solution:**
+
+```python
+arr = [2, 7, 11, 15]
+target = 9
+
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] + arr[j] == target:
+            print(arr[i], arr[j])
+```
+
+---
+
+## 14. Rotate an Array by One Position
+
+**Question:**
+Rotate an array one position to the right.
+
+**Example:**
+
+```text
+Input:  [1, 2, 3, 4, 5]
+Output: [5, 1, 2, 3, 4]
+```
+
+**Solution:**
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+last = arr.pop()
+
+arr.insert(0, last)
+
+print(arr)
+```
+
+---
+
+## 15. Find the Majority Element
+
+**Question:**
+Find the element that occurs more than `n/2` times.
+
+**Example:**
+
+```text
+Input:  [2, 2, 1, 1, 1, 2, 2]
+Output: 2
+```
+
+**Simple Solution:**
+
+```python
+arr = [2, 2, 1, 1, 1, 2, 2]
+
+for i in arr:
+    if arr.count(i) > len(arr) // 2:
+        print(i)
+        break
+```
+
+---
+
+## 16. Find Common Elements in Two Arrays
+
+**Question:**
+Find the elements that are present in both arrays.
+
+**Example:**
+
+```text
+A = [1, 2, 3, 4]
+B = [2, 4, 6, 8]
+
+Output: 2 4
+```
+
+**Solution:**
+
+```python
+A = [1, 2, 3, 4]
+B = [2, 4, 6, 8]
+
+for i in A:
+    if i in B:
+        print(i)
+```
+
+---
+
+## 17. Find the Duplicate Element
+
+**Question:**
+Find the duplicate element in an array.
+
+**Example:**
+
+```text
+Input:  [1, 3, 4, 2, 2]
+Output: 2
+```
+
+**Solution:**
+
+```python
+arr = [1, 3, 4, 2, 2]
+
+for i in arr:
+    if arr.count(i) > 1:
+        print(i)
+        break
+```
+
+---
+
+## 18. Best Time to Buy and Sell Stock
+
+**Question:**
+Given stock prices for different days, find the maximum profit.
+
+**Example:**
+
+```text
+Input:  [7, 1, 5, 3, 6, 4]
+Output: 5
+```
+
+Buy at `1` and sell at `6`.
+
+**Solution:**
+
+```python
+arr = [7, 1, 5, 3, 6, 4]
+
+minimum = arr[0]
+profit = 0
+
+for price in arr:
+    minimum = min(minimum, price)
+    profit = max(profit, price - minimum)
+
+print(profit)
+```
+
+---
+
+## 19. Find Leaders in an Array
+
+**Question:**
+An element is a leader if every element to its right is smaller.
+
+**Example:**
+
+```text
+Input:  [16, 17, 4, 3, 5, 2]
+Output: 17 5 2
+```
+
+**Solution:**
+
+```python
+arr = [16, 17, 4, 3, 5, 2]
+
+leaders = []
+
+for i in range(len(arr)):
+    if arr[i] == max(arr[i:]):
+        leaders.append(arr[i])
+
+print(leaders)
+```
+
+---
+
+## 20. Find the Pair with the Largest Sum
+
+**Question:**
+Find the two elements whose sum is maximum.
+
+**Example:**
+
+```text
+Input:  [10, 5, 20, 8, 15]
+Output: 35
+```
+
+`20 + 15 = 35`
+
+**Solution:**
+
+```python
+arr = [10, 5, 20, 8, 15]
+
+arr.sort()
+
+print(arr[-1] + arr[-2])
+```
