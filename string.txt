@@ -1,0 +1,369 @@
+## 1. Find minimum and maximum character
+
+**Example:**
+
+```text
+Input:  "programming"
+Output: ['a', 'r']
+```
+
+GFG-style:
+
+```python
+class Solution:
+    def getMinMax(self, s):
+        minimum = s[0]
+        maximum = s[0]
+
+        for i in range(1, len(s)):
+            if s[i] < minimum:
+                minimum = s[i]
+
+            if s[i] > maximum:
+                maximum = s[i]
+
+        return [minimum, maximum]
+```
+
+For:
+
+```python
+s = "programming"
+```
+
+returns:
+
+```text
+['a', 'r']
+```
+
+---
+
+# Important String Questions to Practice
+
+These are the kinds of **basic string patterns commonly used in coding assessments**.
+
+## 2. Reverse a String
+
+```python
+class Solution:
+    def reverseString(self, s):
+        return s[::-1]
+```
+
+Example:
+
+```text
+Input:  "hello"
+Output: "olleh"
+```
+
+---
+
+## 3. Check Palindrome
+
+```python
+class Solution:
+    def isPalindrome(self, s):
+        return s == s[::-1]
+```
+
+Example:
+
+```text
+Input:  "madam"
+Output: True
+```
+
+---
+
+## 4. Count Vowels
+
+```python
+class Solution:
+    def countVowels(self, s):
+        count = 0
+
+        for i in s:
+            if i in "aeiouAEIOU":
+                count += 1
+
+        return count
+```
+
+Example:
+
+```text
+Input:  "programming"
+Output: 3
+```
+
+---
+
+## 5. Count Characters
+
+```python
+class Solution:
+    def countCharacters(self, s):
+        count = 0
+
+        for i in s:
+            count += 1
+
+        return count
+```
+
+You can also use:
+
+```python
+len(s)
+```
+
+---
+
+## 6. Count Frequency of a Character
+
+```python
+class Solution:
+    def frequency(self, s, ch):
+        count = 0
+
+        for i in s:
+            if i == ch:
+                count += 1
+
+        return count
+```
+
+Example:
+
+```text
+s = "banana"
+ch = "a"
+
+Output: 3
+```
+
+---
+
+## 7. Find First Non-Repeating Character
+
+```python
+class Solution:
+    def firstNonRepeating(self, s):
+        for i in s:
+            if s.count(i) == 1:
+                return i
+
+        return -1
+```
+
+Example:
+
+```text
+Input:  "swiss"
+Output: "w"
+```
+
+---
+
+## 8. Remove Spaces from String
+
+```python
+class Solution:
+    def removeSpaces(self, s):
+        result = ""
+
+        for i in s:
+            if i != " ":
+                result += i
+
+        return result
+```
+
+Example:
+
+```text
+Input:  "hello world"
+Output: "helloworld"
+```
+
+---
+
+## 9. Check if Two Strings are Anagrams
+
+```python
+class Solution:
+    def areAnagrams(self, s1, s2):
+        return sorted(s1) == sorted(s2)
+```
+
+Example:
+
+```text
+s1 = "listen"
+s2 = "silent"
+
+Output: True
+```
+
+---
+
+## 10. Find Duplicate Characters
+
+```python
+class Solution:
+    def duplicates(self, s):
+        result = []
+
+        for i in s:
+            if s.count(i) > 1 and i not in result:
+                result.append(i)
+
+        return result
+```
+
+Example:
+
+```text
+Input:  "programming"
+Output: ['r', 'g', 'm']
+```
+
+---
+
+## 11. Convert Lowercase to Uppercase
+
+```python
+class Solution:
+    def convert(self, s):
+        return s.upper()
+```
+
+Example:
+
+```text
+Input:  "hello"
+Output: "HELLO"
+```
+
+---
+
+## 12. Count Words in a String
+
+```python
+class Solution:
+    def countWords(self, s):
+        return len(s.split())
+```
+
+Example:
+
+```text
+Input:  "I love Python"
+Output: 3
+```
+
+---
+
+## 13. Find the Largest Word
+
+```python
+class Solution:
+    def largestWord(self, s):
+        words = s.split()
+
+        largest = words[0]
+
+        for word in words:
+            if len(word) > len(largest):
+                largest = word
+
+        return largest
+```
+
+Example:
+
+```text
+Input:  "I love programming"
+Output: "programming"
+```
+
+---
+
+## 14. Remove Duplicate Characters
+
+```python
+class Solution:
+    def removeDuplicates(self, s):
+        result = ""
+
+        for i in s:
+            if i not in result:
+                result += i
+
+        return result
+```
+
+Example:
+
+```text
+Input:  "programming"
+Output: "progamin"
+```
+
+---
+
+## 15. Check if String Contains Only Digits
+
+```python
+class Solution:
+    def onlyDigits(self, s):
+        for i in s:
+            if i < '0' or i > '9':
+                return False
+
+        return True
+```
+
+Example:
+
+```text
+"12345" → True
+"123a5" → False
+```
+
+---
+
+# The ones I would prioritize
+
+For coding tests, get very comfortable with these patterns:
+
+```text
+1. Largest / smallest element
+2. Reverse array
+3. Reverse string
+4. Palindrome
+5. Frequency counting
+6. Duplicate elements
+7. First non-repeating character
+8. Anagram
+9. Count vowels/consonants
+10. Remove duplicates
+11. Largest word
+12. Two Sum
+13. Missing number
+14. Maximum subarray sum
+15. Sorting-based problems
+```
+
+And for **GFG-style submissions**, keep using the format:
+
+```python
+class Solution:
+    def functionName(self, input):
+        # logic
+        return answer
+```
+
+You generally **don't write `input()` or `print()`** when GFG provides the function signature.
